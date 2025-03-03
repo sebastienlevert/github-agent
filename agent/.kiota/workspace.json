@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "clients": {},
+  "plugins": {
+    "GitHubv3RESTAPI": {
+      "types": [
+        "APIPlugin"
+      ],
+      "authType": null,
+      "authReferenceId": null,
+      "descriptionLocation": "https://raw.githubusercontent.com/APIs-guru/openapi-directory/gh-pages/v2/specs/github.com/1.1.4/openapi.json",
+      "includePatterns": [
+        "/repos/{org-id}/{repo-id}/issues/{issue_number}#PATCH"
+      ],
+      "excludePatterns": [],
+      "outputPath": "./appPackage"
+    }
+  }
+}

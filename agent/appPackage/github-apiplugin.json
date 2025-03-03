@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+  "schema_version": "v2.2",
+  "name_for_human": "GitHub",
+  "description_for_human": "GitHub",
+  "description_for_model": "GitHub",
+  "logo_url": "https://api.apis.guru/v2/cache/logo/https_twitter.com_github_profile_image.jpeg",
+  "contact_email": "publisher-email@example.com",
+  "namespace": "GitHub",
+  "functions": [
+    {
+      "name": "issues_add_assignees",
+      "description": "Adds up to 10 assignees to an issue."
+    },
+    {
+      "name": "issues_update",
+      "description": "Update an issue in a repository."
+    }
+  ],
+  "runtimes": [
+    {
+      "type": "OpenApi",
+      "auth": {
+        "type": "OAuthPluginVault",
+        "reference_id": "${{OAUTH2AUTHCODE_CONFIGURATION_ID}}"
+      },
+      "spec": {
+        "url": "github-openapi.yml"
+      },
+      "run_for_functions": [
+        "issues_update",
+        "issues_add_assignees"
+      ]
+    }
+  ]
+}

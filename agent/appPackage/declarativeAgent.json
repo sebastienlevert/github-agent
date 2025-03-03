@@ -1,0 +1,56 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+    "version": "v1.2",
+    "name": "GitHub Agent",
+    "description": "An assistant for project management professionals with GitHub.",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Last month focus",
+            "text": "In the last month, what is main theme we worked on based on the closed issues?"
+        },
+        {
+            "title": "Best Practices",
+            "text": "What are some best practices in issue management using GitHub?"
+        },
+        {
+            "title": "Assigned issues",
+            "text": "What are the current top issues assigned to"
+        },
+        {
+            "title": "All issues",
+            "text": "List the latest issues from the repo"
+        },
+        {
+            "title": "Prioritize issues",
+            "text": "Based on the latest issues, which one should we prioritize?"
+        },
+        {
+            "title": "Visualize the issues",
+            "text": "Visualize the data as a pie chart grouped by assignee based on the the latest issues."
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "GraphConnectors",
+            "connections": [
+                { "connection_id": "${{CONNECTION_ID}}" }
+            ]
+        },
+        {
+            "name": "WebSearch",
+            "sites": [
+                { "url": "https://docs.github.com/en/issues" }
+            ]
+        },
+        {
+            "name": "CodeInterpreter"
+        }
+    ],
+    "actions": [
+        {
+            "id": "github",
+            "file": "github-apiplugin.json"
+        }
+    ]
+}
