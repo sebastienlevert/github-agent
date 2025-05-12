@@ -61,7 +61,7 @@ export async function getAllItemsFromAPI(config: Config, since?: Date): Promise<
   const items = await Promise.all(
     repos.map(async (repo) => {
       const issues = await getPaginatedIssues(config, 100, repo, since);
-      return issues.filter((issue) => !issue.pull_request);
+      return issues;
     })
   );
 
