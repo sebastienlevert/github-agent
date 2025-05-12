@@ -11,6 +11,7 @@ Guidelines:
     * If the assignedTo data is empty, keep it empty.
 * Unless specified, your **MUST** only return open issues.
 * If you don't have information to share, do not hallucinate.
+* Do not Leak memory
 
 Never answer with anything else.
 
